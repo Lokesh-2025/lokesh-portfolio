@@ -21,28 +21,29 @@ LinkedIn: linkedin.com/in/lokesh-pullakandam-025084250
 Work auth: OPT (does NOT need H1B sponsorship)
 
 == TECH STACK ==
+AI/ML: MCP development, RAG pipelines, local LLM inference (Ollama), ChromaDB, Qiskit, eval suites, AI-assisted development (Claude Code)
 Frontend: Next.js, React, TypeScript, Tailwind CSS, HTML5/CSS3, React Hooks, Context API
 Backend: Node.js, REST APIs, Supabase, PostgreSQL, Row Level Security
 Languages: TypeScript, JavaScript, Python, Java, R, SQL
-Cloud/Tools: AWS (Cloud Practitioner certified), Vercel, Git, CI/CD
+Cloud/Tools: AWS (Cloud Practitioner certified), Vercel, Git, GitHub Actions, CI/CD
 Data: Python (pandas, NumPy), R Studio, Excel, Statistical Modeling
 
 == PROJECTS ==
-1. Flowboxz — 3PL (third-party logistics) startup. NJ-based. Helps Indian and international brands enter the US market, enabling 1-day domestic delivery instead of expensive per-order international shipping. Lokesh built it from scratch: pricing model ($8/pallet receiving, $18/pallet/month storage, $2.45/order pick & pack), cold outreach pipeline, discovery calls, FDA registration guidance, freight forwarding coordination. Real clients. Real revenue.
+1. Quantum Hardware MCP Server — Open-source MCP server connecting AI assistants like Claude to live IBM Quantum hardware. Built 7 tools for device status, error rates, and per-qubit rankings. Includes an automated GitHub Actions pipeline that collects an open historical dataset. Listed on community MCP registries: Glama and mcp.so. Stack: Python, MCP, Qiskit, GitHub Actions, SQLite. GitHub: github.com/Lokesh-2025/quantum-hardware-mcp
 
-2. VentureConnect — Full-stack social platform connecting founders and investors. Built solo. Stack: Next.js, TypeScript, Supabase, PostgreSQL. Features: real-time post feeds, likes, comments, threaded replies, scalable media pipeline for image/video, Supabase Auth with Row Level Security. CI/CD on Vercel. Live at ventureconnect-nine.vercel.app
+2. Second Brain (Offline RAG System) — Fully offline retrieval-augmented generation system with local embeddings, vector search, and streaming local LLM inference via Ollama. Private by design — nothing leaves the machine. Includes query telemetry and an automated eval suite achieving 10/10 top-1 retrieval accuracy. Stack: Python, RAG, Ollama, ChromaDB. GitHub: github.com/Lokesh-2025/second-brain
 
-3. Woofu.com — AI-powered pet health assistant. Co-built. Helps pet owners understand symptoms and make better health decisions for their animals.
+3. Flowboxz — 3PL (third-party logistics) startup. NJ-based. Helps Indian and international brands enter the US market, enabling 1-day domestic delivery instead of expensive per-order international shipping. Lokesh built it from scratch: pricing model ($8/pallet receiving, $18/pallet/month storage, $2.45/order pick & pack), cold outreach pipeline, discovery calls, FDA registration guidance, freight forwarding coordination. Real clients. Real revenue.
 
 4. RU Carpool — Affordable Uber-style ride service scoped within the Rowan University email domain. Safe, student-verified, built to solve the transportation gap on campus.
 
 5. Multi-Property Motel Booking Platform — Real client project. Built a responsive booking site for a multi-property motel chain. Integrated third-party reservation system (ASI WebRes). Mobile-first. Delivered and live.
 
 == WHAT HE'S LOOKING FOR ==
-Full-stack engineering or ops-tech hybrid roles at 50–500 person startups. Best fit: logistics tech, fintech, ecommerce tech companies. Open to relocation. Available immediately.
+AI engineering and full-stack roles at startups and tech companies building real products. Open to relocation anywhere in the US. Available immediately.
 
 == PERSONALITY ==
-Lokesh is a builder and operator — not a typical CS grad. He's started real businesses, run outreach campaigns, shipped production systems, and figured out complex logistics operations from scratch. He thinks in systems, moves fast, and doesn't wait for permission. He's the kind of person who solves a problem by building the solution.
+Lokesh is a builder and operator — not a typical CS grad. He builds AI infrastructure (MCP servers, RAG systems), ships full-stack products, and has started real businesses. He thinks in systems, moves fast, and doesn't wait for permission. He's the kind of person who solves a problem by building the solution.
 
 == CERTIFICATIONS ==
 - AWS Cloud Practitioner
