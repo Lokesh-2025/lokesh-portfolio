@@ -1,0 +1,112 @@
+name: Auto-sync project data from GitHub
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    # Prevent an infinite loop when the bot commits back
+    if: github.actor != 'github-actions[bot]'
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync stars and updated_at from GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node << 'NODEEOF'
+          const fs = require('fs');
+          const https = require('https');
+
+          function get(url) {
+            return new Promise((resolve, reject) => {
+              const u = new URL(url);
+              https.get({
+                hostname: u.hostname,
+                path: u.pathname + u.search,
+                headers: {
+                  Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+                  'User-Agent': 'portfolio-auto-sync/1.0',
+                  Accept: 'application/vnd.github.v3+json',
+                },
+              }, (res) => {
+                let data = '';
+                res.on('data', (d) => (data += d));
+                res.on('end', () => resolve(JSON.parse(data)));
+              }).on('error', reject);
+            });
+          }
+
+          async function main() {
+            const repos = await get(
+              'https://api.github.com/users/Lokesh-2025/repos?per_page=100&sort=updated'
+            );
+
+            if (!Array.isArray(repos)) {
+              console.error('Unexpected API response:', repos);
+              process.exit(1);
+            }
+
+            const repoMap = {};
+            for (const repo of repos) {
+              repoMap[repo.name.toLowerCase()] = repo;
+            }
+
+            const projects = JSON.parse(fs.readFileSync('projects.json', 'utf8'));
+            let changed = false;
+
+            for (const project of projects) {
+              if (!project.link || !project.link.includes('github.com/Lokesh-2025/')) continue;
+              const repoName = project.link.split('/').pop().toLowerCase();
+              const repo = repoMap[repoName];
+              if (!repo) {
+                console.log(`Repo not found for "${project.name}": ${repoName}`);
+                continue;
+              }
+
+              const newStars = repo.stargazers_count;
+              const newUpdated = repo.updated_at;
+
+              if (project.stars !== newStars || project.updatedAt !== newUpdated) {
+                console.log(
+                  `Updating "${project.name}": stars ${project.stars ?? 'unset'} → ${newStars}, updated ${project.updatedAt || 'unset'} → ${newUpdated}`
+                );
+                project.stars = newStars;
+                project.updatedAt = newUpdated;
+                changed = true;
+              }
+            }
+
+            if (changed) {
+              fs.writeFileSync('projects.json', JSON.stringify(projects, null, 2) + '\n');
+              console.log('projects.json updated');
+            } else {
+              console.log('No changes — projects.json is already up to date');
+            }
+          }
+
+          main().catch((e) => {
+            console.error(e);
+            process.exit(1);
+          });
+          NODEEOF
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects.json
+          if git diff --staged --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "chore: auto-sync project data from GitHub"
+            git push
+          fi

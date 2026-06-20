@@ -602,7 +602,7 @@
         <div class="section-tag">Mission Briefing</div>
         <h2 class="section-title">Builder by nature,<br>operator by choice.</h2>
         <p>I graduated from Rowan University with a BS in Computer Information Systems (Dec 2025) and immediately got to work building real things. I don't wait for the perfect opportunity — I create it.</p>
-        <p>I think in <strong>systems</strong>. Whether it's building open-source MCP servers, architecting a RAG pipeline, or shipping a full-stack product for a real client — I move fast and figure things out.</p>
+        <p>I think in <strong>systems</strong>. Whether it's building two open-source MCP servers, architecting a RAG pipeline, or shipping a full-stack product — I move fast and figure things out.</p>
         <p>Currently seeking <strong>AI engineering and full-stack roles</strong> at startups and tech companies building real products. Open to relocation.</p>
       </div>
       <div class="about-stats reveal">
@@ -709,79 +709,8 @@
       <div class="section-tag">Mission Log</div>
       <h2 class="section-title">Things I've Built</h2>
     </div>
-    <div class="projects-grid">
-
-      <div class="project-card reveal" style="--card-accent: linear-gradient(90deg, #00d2d3, #4f8fe0)">
-        <div class="project-num">01 / AI Infrastructure</div>
-        <div class="project-name">Quantum Hardware MCP Server</div>
-        <div class="project-tagline">Open-Source · Listed on Glama &amp; mcp.so</div>
-        <p class="project-desc">Open-source MCP server connecting AI assistants like Claude to live IBM Quantum hardware. 7 tools for device status, error rates, and per-qubit rankings, plus an automated GitHub Actions pipeline collecting an open historical dataset. Listed on community registries (Glama, mcp.so).</p>
-        <div class="project-stack">
-          <span class="project-tech">Python</span>
-          <span class="project-tech">MCP</span>
-          <span class="project-tech">Qiskit</span>
-          <span class="project-tech">GitHub Actions</span>
-          <span class="project-tech">SQLite</span>
-        </div>
-        <a href="https://github.com/Lokesh-2025/quantum-hardware-mcp" target="_blank" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card reveal" style="--card-accent: linear-gradient(90deg, #635BFF, #9b59b6)">
-        <div class="project-num">02 / AI Infrastructure</div>
-        <div class="project-name">Stripe MCP Server</div>
-        <div class="project-tagline">Open-Source · Listed on Glama &amp; mcp.so</div>
-        <p class="project-desc">Open-source MCP server connecting Claude to a Stripe account via natural language. 7 tools: customers, revenue, invoices, failed payments, subscriptions, refunds, and disputes. Idempotency keys on write operations and a pinned API version prevent silent breakage on upstream changes.</p>
-        <div class="project-stack">
-          <span class="project-tech">Node.js</span>
-          <span class="project-tech">MCP SDK</span>
-          <span class="project-tech">Stripe API</span>
-          <span class="project-tech">Zod</span>
-        </div>
-        <a href="https://github.com/Lokesh-2025/stripe-mcp-server" target="_blank" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card reveal" style="--card-accent: linear-gradient(90deg, #9b59b6, #e056a0)">
-        <div class="project-num">03 / AI / ML</div>
-        <div class="project-name">Second Brain</div>
-        <div class="project-tagline">Offline RAG System · Private by Design</div>
-        <p class="project-desc">Fully offline retrieval-augmented generation system: local embeddings, vector search, and streaming LLM inference via Ollama — private by design. Wrote the eval harness first, tracking retrieval and generation quality as independent failure modes. Achieved 10/10 top-1 retrieval accuracy on the test set.</p>
-        <div class="project-stack">
-          <span class="project-tech">Python</span>
-          <span class="project-tech">RAG</span>
-          <span class="project-tech">Ollama</span>
-          <span class="project-tech">ChromaDB</span>
-          <span class="project-tech">SQLite</span>
-        </div>
-        <a href="https://github.com/Lokesh-2025/second-brain" target="_blank" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card reveal" style="--card-accent: linear-gradient(90deg, #e056a0, #9b59b6)">
-        <div class="project-num">04 / Client Work</div>
-        <div class="project-name">Multi-Property Booking Platform</div>
-        <div class="project-tagline">Real Client · Motel Chain</div>
-        <p class="project-desc">Custom booking platform built for a real client — multi-property motel chain. Scoped requirements directly with the client, handled cross-property availability logic, third-party reservation system integration (ASI WebRes), and deployed the full product independently.</p>
-        <div class="project-stack">
-          <span class="project-tech">Next.js</span>
-          <span class="project-tech">TypeScript</span>
-          <span class="project-tech">Tailwind CSS</span>
-          <span class="project-tech">Vercel</span>
-        </div>
-        <a href="mailto:lokeshpullakandam123@gmail.com" class="project-link">Ask me about it →</a>
-      </div>
-
-      <div class="project-card reveal" style="--card-accent: linear-gradient(90deg, #4f8fe0, #00d2d3)">
-        <div class="project-num">05 / Operations</div>
-        <div class="project-name">Flowboxz</div>
-        <div class="project-tagline">3PL Operations · NJ-Based</div>
-        <p class="project-desc">Built a third-party logistics operation from scratch — helping Indian and international brands enter the US market with 1-day domestic delivery. Designed the pricing model, ran outreach across 15+ brands, guided clients through FDA registration and freight forwarding.</p>
-        <div class="project-stack">
-          <span class="project-tech">Operations</span>
-          <span class="project-tech">Cold Outreach</span>
-          <span class="project-tech">Logistics</span>
-        </div>
-        <a href="mailto:lokeshpullakandam123@gmail.com" class="project-link">Ask me about it →</a>
-      </div>
-
+    <div class="projects-grid" id="projects-grid">
+      <!-- Rendered dynamically from projects.json -->
     </div>
   </div>
 </section>
@@ -1505,6 +1434,51 @@
     renderer.render(scene, camera);
   }
   animate();
+})();
+
+// ── PROJECTS LOADER ──
+(function() {
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function renderCard(p) {
+    const isExternal = p.link && p.link.startsWith('http');
+    return `<div class="project-card reveal" style="--card-accent: ${p.accent}">
+        <div class="project-num">${esc(p.num)}</div>
+        <div class="project-name">${esc(p.name)}</div>
+        <div class="project-tagline">${esc(p.tagline)}</div>
+        <p class="project-desc">${esc(p.desc)}</p>
+        <div class="project-stack">
+          ${p.stack.map(t => `<span class="project-tech">${esc(t)}</span>`).join('')}
+        </div>
+        <a href="${p.link}"${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="project-link">${esc(p.linkText)}</a>
+      </div>`;
+  }
+
+  async function loadProjects() {
+    const grid = document.getElementById('projects-grid');
+    if (!grid) return;
+    try {
+      const res = await fetch('projects.json');
+      const projects = await res.json();
+      grid.innerHTML = projects.map(renderCard).join('');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+        });
+      }, { threshold: 0.1 });
+      grid.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    } catch (err) {
+      console.error('Failed to load projects:', err);
+    }
+  }
+
+  loadProjects();
 })();
 
 // ── SCROLL REVEAL ──
