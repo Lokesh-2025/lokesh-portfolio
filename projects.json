@@ -4,24 +4,36 @@
     "name": "Quantum Hardware MCP Server",
     "tagline": "Open-Source · Listed on Glama, mcp.so & PulseMCP",
     "desc": "Open-source MCP server giving AI assistants live access to real quantum hardware across IBM Quantum, IonQ, and AWS Braket — 34 tools spanning device intelligence, job routing, and result analysis across 19 backends. Built in collaboration with an IBM Quantum veteran and Qiskit contributor. Used to run real experiments on ibm_marrakesh, including discovering a routing-failure class in Grover circuits on heavy-hex topology and reaching 27.78× amplification via a hand-derived Ising Hamiltonian.",
-    "stack": ["Python", "MCP", "Qiskit", "IonQ", "AWS Braket", "GitHub Actions"],
+    "stack": [
+      "Python",
+      "MCP",
+      "Qiskit",
+      "IonQ",
+      "AWS Braket",
+      "GitHub Actions"
+    ],
     "link": "https://github.com/Lokesh-2025/quantum-hardware-mcp",
     "linkText": "View on GitHub →",
     "accent": "linear-gradient(90deg, #00d2d3, #4f8fe0)",
     "stars": 5,
-    "updatedAt": "2026-07-09T02:12:28Z"
+    "updatedAt": "2026-07-09T23:05:15Z"
   },
   {
     "num": "02 / AI Infrastructure",
     "name": "Quantum Hardware Web",
     "tagline": "Next.js Frontend · Real Quantum Hardware",
     "desc": "Dark-themed Next.js frontend for the Quantum Hardware MCP Server — Grover's Search, VQE chemistry, live backend comparison, a circuit playground with a pre-flight checker, and job history, all running against real IBM Quantum hardware (not simulated) via a thin FastAPI layer.",
-    "stack": ["Next.js", "TypeScript", "FastAPI", "IBM Quantum"],
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "IBM Quantum"
+    ],
     "link": "https://github.com/Lokesh-2025/quantum-hardware-web",
     "linkText": "View on GitHub →",
     "accent": "linear-gradient(90deg, #00d2d3, #9b59b6)",
-    "stars": 0,
-    "updatedAt": ""
+    "stars": 2,
+    "updatedAt": "2026-07-03T17:15:37Z"
   },
   {
     "num": "03 / AI Infrastructure",
