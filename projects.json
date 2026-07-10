@@ -2,15 +2,9 @@
   {
     "num": "01 / AI Infrastructure",
     "name": "Quantum Hardware MCP Server",
-    "tagline": "Open-Source · Listed on Glama & mcp.so",
-    "desc": "Open-source MCP server connecting AI assistants like Claude to live IBM Quantum hardware. 7 tools for device status, error rates, and per-qubit rankings, plus an automated GitHub Actions pipeline collecting an open historical dataset. Listed on community registries (Glama, mcp.so).",
-    "stack": [
-      "Python",
-      "MCP",
-      "Qiskit",
-      "GitHub Actions",
-      "SQLite"
-    ],
+    "tagline": "Open-Source · Listed on Glama, mcp.so & PulseMCP",
+    "desc": "Open-source MCP server giving AI assistants live access to real quantum hardware across IBM Quantum, IonQ, and AWS Braket — 34 tools spanning device intelligence, job routing, and result analysis across 19 backends. Built in collaboration with an IBM Quantum veteran and Qiskit contributor. Used to run real experiments on ibm_marrakesh, including discovering a routing-failure class in Grover circuits on heavy-hex topology and reaching 27.78× amplification via a hand-derived Ising Hamiltonian.",
+    "stack": ["Python", "MCP", "Qiskit", "IonQ", "AWS Braket", "GitHub Actions"],
     "link": "https://github.com/Lokesh-2025/quantum-hardware-mcp",
     "linkText": "View on GitHub →",
     "accent": "linear-gradient(90deg, #00d2d3, #4f8fe0)",
@@ -19,6 +13,18 @@
   },
   {
     "num": "02 / AI Infrastructure",
+    "name": "Quantum Hardware Web",
+    "tagline": "Next.js Frontend · Real Quantum Hardware",
+    "desc": "Dark-themed Next.js frontend for the Quantum Hardware MCP Server — Grover's Search, VQE chemistry, live backend comparison, a circuit playground with a pre-flight checker, and job history, all running against real IBM Quantum hardware (not simulated) via a thin FastAPI layer.",
+    "stack": ["Next.js", "TypeScript", "FastAPI", "IBM Quantum"],
+    "link": "https://github.com/Lokesh-2025/quantum-hardware-web",
+    "linkText": "View on GitHub →",
+    "accent": "linear-gradient(90deg, #00d2d3, #9b59b6)",
+    "stars": 0,
+    "updatedAt": ""
+  },
+  {
+    "num": "03 / AI Infrastructure",
     "name": "Stripe MCP Server",
     "tagline": "Open-Source · Listed on Glama & mcp.so",
     "desc": "Open-source MCP server connecting Claude to a Stripe account via natural language. 7 tools: customers, revenue, invoices, failed payments, subscriptions, refunds, and disputes. Idempotency keys on write operations and a pinned API version prevent silent breakage on upstream changes.",
@@ -35,7 +41,7 @@
     "updatedAt": "2026-06-26T20:34:41Z"
   },
   {
-    "num": "03 / AI / ML",
+    "num": "04 / AI / ML",
     "name": "Second Brain",
     "tagline": "Offline RAG System · Private by Design",
     "desc": "Fully offline retrieval-augmented generation system: local embeddings, vector search, and streaming LLM inference via Ollama — private by design. Wrote the eval harness first, tracking retrieval and generation quality as independent failure modes. Achieved 10/10 top-1 retrieval accuracy on the test set.",
@@ -53,7 +59,7 @@
     "updatedAt": "2026-06-26T20:34:45Z"
   },
   {
-    "num": "04 / Client Work",
+    "num": "05 / Client Work",
     "name": "Multi-Property Booking Platform",
     "tagline": "Real Client · Motel Chain",
     "desc": "Custom booking platform built for a real client — multi-property motel chain. Scoped requirements directly with the client, handled cross-property availability logic, third-party reservation system integration (ASI WebRes), and deployed the full product independently.",
@@ -68,7 +74,7 @@
     "accent": "linear-gradient(90deg, #e056a0, #9b59b6)"
   },
   {
-    "num": "05 / Operations",
+    "num": "06 / Operations",
     "name": "Flowboxz",
     "tagline": "3PL Operations · NJ-Based",
     "desc": "Built a third-party logistics operation from scratch — helping Indian and international brands enter the US market with 1-day domestic delivery. Designed the pricing model, ran outreach across 15+ brands, guided clients through FDA registration and freight forwarding.",
