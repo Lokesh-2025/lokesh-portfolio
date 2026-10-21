@@ -1,9 +1,24 @@
 [
   {
+    "num": "00 / Published Research",
+    "name": "Verify Before You Trust It, Even Yourself",
+    "tagline": "Published Paper · Co-authored with an IBM Champion",
+    "desc": "A verification tool built to catch AI-generated quantum circuits lying about what they actually ran — pointed at our own prior work, it immediately found five real bugs, including one that had already silently produced a wrong, previously-published number, and correctly cleared a sixth suspected one. Only once those were fixed did we trust the actual physics result: the same entangling circuit run twice each on real IBM and real IonQ hardware, submitted 26 seconds apart. Found a real, statistically significant 51% swing in IonQ's result across a 6-day gap against zero significant change in IBM's result across 37 minutes — reported as an honest open question, not an overclaimed vendor verdict. Co-authored with an IBM Quantum veteran and Qiskit contributor; data and circuits independently archived and citable on Zenodo.",
+    "stack": [
+      "Qiskit",
+      "IonQ SDK",
+      "Python",
+      "Statistics"
+    ],
+    "link": "https://doi.org/10.5281/zenodo.23545987",
+    "linkText": "Read the Paper →",
+    "accent": "linear-gradient(90deg, #f5c518, #00d2d3)"
+  },
+  {
     "num": "01 / AI Infrastructure",
     "name": "Quantum Hardware MCP Server",
     "tagline": "Open-Source · Listed on Glama, mcp.so & PulseMCP",
-    "desc": "Open-source MCP server giving AI assistants live access to real quantum hardware across IBM Quantum, IonQ, and AWS Braket — 34 tools spanning device intelligence, job routing, and result analysis across 19 backends. Built in collaboration with an IBM Quantum veteran and Qiskit contributor. Used to run real experiments on ibm_marrakesh, including discovering a routing-failure class in Grover circuits on heavy-hex topology and reaching 27.78× amplification via a hand-derived Ising Hamiltonian.",
+    "desc": "Open-source MCP server giving AI assistants live access to real quantum hardware across IBM Quantum, IonQ, and AWS Braket — 34 tools spanning device intelligence, job routing, calibration history, and result analysis across 19 backends. Built in collaboration with an IBM Quantum veteran and Qiskit contributor. Powers every quantum project below, including a published, Zenodo-archived cross-vendor hardware paper.",
     "stack": [
       "Python",
       "MCP",
@@ -16,10 +31,43 @@
     "linkText": "View on GitHub →",
     "accent": "linear-gradient(90deg, #00d2d3, #4f8fe0)",
     "stars": 7,
-    "updatedAt": "2026-10-21T02:46:28Z"
+    "updatedAt": "2026-10-21T19:50:39Z"
   },
   {
     "num": "02 / AI Infrastructure",
+    "name": "Quantum Verifier",
+    "tagline": "Open-Source · Safety Gate for AI-Generated Quantum Circuits",
+    "desc": "A verification pipeline sitting between 'the AI wrote a quantum circuit' and 'trust what it reports': five checks run in order on a free simulator before anything touches real hardware — circuit sanity, connectivity/routing risk, ideal-vs-noise-aware simulation, gate-synthesis honesty, and a statistical ground-truth check (Wilson score interval + TOST equivalence testing) against the actual claim. Pointed at the author's own prior research, it caught five real, previously-invisible bugs — including one that had silently doubled every IonQ gate count — and correctly cleared a sixth suspected one. Now the verification backbone behind a published cross-vendor IBM/IonQ hardware paper.",
+    "stack": [
+      "Python",
+      "Qiskit",
+      "IonQ SDK",
+      "Statistics"
+    ],
+    "link": "https://github.com/Lokesh-2025/quantum-verifier",
+    "linkText": "View on GitHub →",
+    "accent": "linear-gradient(90deg, #2ecc71, #00d2d3)",
+    "stars": 4,
+    "updatedAt": "2026-10-17T13:25:58Z"
+  },
+  {
+    "num": "03 / AI Infrastructure",
+    "name": "Singmaster's Conjecture on IBM Quantum Hardware",
+    "tagline": "178.8× Hardware-Confirmed Amplification · Real IBM Record",
+    "desc": "Grover's search for Singmaster's Conjecture (does any number appear 9+ times in Pascal's Triangle?) broke down for a real physical reason, not a bug: IBM's heavy-hex chip caps every qubit at 3 direct connections, and Grover's oracle needed a 4th, forcing routing overhead the noise couldn't survive. Rebuilt the search as LNAA (Lattice-Native Amplitude Amplification) — encoding target rows as the ground state of a Hamiltonian built entirely from the chip's own native gates, zero routing required. Result: 178.8× amplification on real ibm_fez hardware, confirming four different Pascal's Triangle entries colliding on the same value simultaneously, in a single hardware job. No 9+ value found up to row 50,000 — consistent with the conjecture.",
+    "stack": [
+      "Python",
+      "Qiskit",
+      "IBM Quantum"
+    ],
+    "link": "https://github.com/Lokesh-2025/singmasters-conjecture",
+    "linkText": "View on GitHub →",
+    "accent": "linear-gradient(90deg, #e056a0, #4f8fe0)",
+    "stars": 1,
+    "updatedAt": "2026-10-21T20:23:47Z"
+  },
+  {
+    "num": "04 / AI Infrastructure",
     "name": "Quantum Hardware Web",
     "tagline": "Next.js Frontend · Real Quantum Hardware",
     "desc": "Dark-themed Next.js frontend for the Quantum Hardware MCP Server — Grover's Search, VQE chemistry, live backend comparison, a circuit playground with a pre-flight checker, and job history, all running against real IBM Quantum hardware (not simulated) via a thin FastAPI layer.",
@@ -36,7 +84,7 @@
     "updatedAt": "2026-09-07T17:29:26Z"
   },
   {
-    "num": "03 / AI Infrastructure",
+    "num": "05 / AI Infrastructure",
     "name": "Stripe MCP Server",
     "tagline": "Open-Source · Listed on Glama & mcp.so",
     "desc": "Open-source MCP server connecting Claude to a Stripe account via natural language. 7 tools: customers, revenue, invoices, failed payments, subscriptions, refunds, and disputes. Idempotency keys on write operations and a pinned API version prevent silent breakage on upstream changes.",
@@ -53,7 +101,7 @@
     "updatedAt": "2026-06-26T20:34:41Z"
   },
   {
-    "num": "04 / AI / ML",
+    "num": "06 / AI / ML",
     "name": "Second Brain",
     "tagline": "Offline RAG System · Private by Design",
     "desc": "Fully offline retrieval-augmented generation system: local embeddings, vector search, and streaming LLM inference via Ollama — private by design. Wrote the eval harness first, tracking retrieval and generation quality as independent failure modes. Achieved 10/10 top-1 retrieval accuracy on the test set.",
@@ -71,7 +119,7 @@
     "updatedAt": "2026-06-26T20:34:45Z"
   },
   {
-    "num": "05 / Client Work",
+    "num": "07 / Client Work",
     "name": "Multi-Property Booking Platform",
     "tagline": "Real Client · Motel Chain",
     "desc": "Custom booking platform built for a real client — multi-property motel chain. Scoped requirements directly with the client, handled cross-property availability logic, third-party reservation system integration (ASI WebRes), and deployed the full product independently.",
@@ -86,7 +134,7 @@
     "accent": "linear-gradient(90deg, #e056a0, #9b59b6)"
   },
   {
-    "num": "06 / Operations",
+    "num": "08 / Operations",
     "name": "Flowboxz",
     "tagline": "3PL Operations · NJ-Based",
     "desc": "Built a third-party logistics operation from scratch — helping Indian and international brands enter the US market with 1-day domestic delivery. Designed the pricing model, ran outreach across 15+ brands, guided clients through FDA registration and freight forwarding.",
