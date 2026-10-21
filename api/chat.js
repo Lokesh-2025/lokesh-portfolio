@@ -14,7 +14,7 @@ export default async function handler(req, res) {
 == WHO IS LOKESH ==
 Name: Lokesh Pullakandam
 Location: Glassboro, NJ (open to relocation anywhere in the US)
-Education: BS in Computer Information Systems, Rowan University — graduated December 2025
+Education: B.A. in Computing and Informatics, Rowan University — graduated December 2025
 Email: lokeshpullakandam123@gmail.com
 Phone: (856) 257-3403
 LinkedIn: linkedin.com/in/lokesh-pullakandam-025084250
@@ -29,15 +29,19 @@ Cloud/Tools: AWS (Cloud Practitioner certified), Vercel, Git, GitHub Actions, CI
 Data: Python (pandas, NumPy), R Studio, Excel, Statistical Modeling
 
 == PROJECTS ==
-1. Quantum Hardware MCP Server — Open-source MCP server connecting AI assistants like Claude to live IBM Quantum hardware. Built 7 tools for device status, error rates, and per-qubit rankings. Includes an automated GitHub Actions pipeline that collects an open historical dataset. Listed on community MCP registries: Glama and mcp.so. Stack: Python, MCP, Qiskit, GitHub Actions, SQLite. GitHub: github.com/Lokesh-2025/quantum-hardware-mcp
+1. Verify Before You Trust It, Even Yourself (Published Paper) — Co-authored with an IBM Quantum veteran and Qiskit contributor. Built a verification tool that caught five real bugs in the authors' own prior quantum hardware research, then used it to run a properly repeat-confirmed, statistically significant cross-vendor comparison between real IBM and real IonQ hardware. Data and circuits independently archived and citable on Zenodo. GitHub: github.com/Lokesh-2025/verify-before-you-trust-it-paper
 
-2. Second Brain (Offline RAG System) — Fully offline retrieval-augmented generation system with local embeddings, vector search, and streaming local LLM inference via Ollama. Private by design — nothing leaves the machine. Includes query telemetry and an automated eval suite achieving 10/10 top-1 retrieval accuracy. Stack: Python, RAG, Ollama, ChromaDB. GitHub: github.com/Lokesh-2025/second-brain
+2. Quantum Hardware MCP Server — Open-source MCP server giving AI assistants live access to real quantum hardware across IBM Quantum, IonQ, and AWS Braket — 34 tools spanning device intelligence, job routing, calibration history, and result analysis across 19 backends. Listed on Glama, mcp.so, and PulseMCP. Stack: Python, MCP, Qiskit, IonQ, AWS Braket, GitHub Actions. GitHub: github.com/Lokesh-2025/quantum-hardware-mcp
 
-3. Flowboxz — 3PL (third-party logistics) startup. NJ-based. Helps Indian and international brands enter the US market, enabling 1-day domestic delivery instead of expensive per-order international shipping. Lokesh built it from scratch: pricing model ($8/pallet receiving, $18/pallet/month storage, $2.45/order pick & pack), cold outreach pipeline, discovery calls, FDA registration guidance, freight forwarding coordination. Real clients. Real revenue.
+3. Quantum Verifier — Open-source safety-gate tool that checks AI-generated quantum circuits against simulation, real device noise, and an auto-generated control experiment before they run on real hardware. The verification backbone behind the published paper above. GitHub: github.com/Lokesh-2025/quantum-verifier
 
-4. RU Carpool — Affordable Uber-style ride service scoped within the Rowan University email domain. Safe, student-verified, built to solve the transportation gap on campus.
+4. Singmaster's Conjecture on IBM Quantum Hardware — Real hardware research exploring whether any number appears 9+ times in Pascal's Triangle. Reached 178.8x amplification on real IBM hardware (ibm_fez), confirming four different Pascal's Triangle entries colliding on the same value simultaneously. GitHub: github.com/Lokesh-2025/singmasters-conjecture
 
-5. Multi-Property Motel Booking Platform — Real client project. Built a responsive booking site for a multi-property motel chain. Integrated third-party reservation system (ASI WebRes). Mobile-first. Delivered and live.
+5. Second Brain (Offline RAG System) — Fully offline retrieval-augmented generation system with local embeddings, vector search, and streaming local LLM inference via Ollama. Private by design — nothing leaves the machine. Includes query telemetry and an automated eval suite achieving 10/10 top-1 retrieval accuracy. Stack: Python, RAG, Ollama, ChromaDB. GitHub: github.com/Lokesh-2025/second-brain
+
+6. Flowboxz — 3PL (third-party logistics) startup. NJ-based. Helps Indian and international brands enter the US market, enabling 1-day domestic delivery instead of expensive per-order international shipping. Lokesh built it from scratch: pricing model ($8/pallet receiving, $18/pallet/month storage, $2.45/order pick & pack), cold outreach pipeline, discovery calls, FDA registration guidance, freight forwarding coordination. Real clients. Real revenue.
+
+7. Multi-Property Motel Booking Platform — Real client project. Built a responsive booking site for a multi-property motel chain. Integrated third-party reservation system (ASI WebRes). Mobile-first. Delivered and live.
 
 == WHAT HE'S LOOKING FOR ==
 AI engineering and full-stack roles at startups and tech companies building real products. Open to relocation anywhere in the US. Available immediately.
